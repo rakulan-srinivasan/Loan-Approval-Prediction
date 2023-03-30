@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <title>Heart Disease prediction</title>
+</head>
+
+<body>
+
+  <h1 class="bo">Heart Disease Prediction</h1>
+  <div class="Image">
+    <img
+      src="https://media.istockphoto.com/vectors/anatomical-heart-isolated-heart-diagnostic-center-sign-human-heart-vector-id1177145926?k=20&m=1177145926&s=612x612&w=0&h=30PszSkc9jmobfif-KVcCaauGUDAWlGspthpmtMsI54=">
+  </div>
+  <div class="form-data">
+    <div class="wrapper">
+      <div class="head">
+        <form action="{{url_for('predict')}}" method="post">
+
+          <!-- <div class="prediction">{{ prediction_text }}</div>
+        <div class="btn-box"><a class="btn btn-link" href="{{url_for('index2')}}" target="_blank">Know More</a></div>
+        <hr class="sep"/>
+      </div>
+        <div class="df">
+        <div class="group">
+          <input type="text" required="required" name="age" id="age"/><span class="highlight"></span><span class="bar"></span>
+          <label>Age</label>
+        </div>
+        <div class="group">
+          <input type="text" required name="cpt" id="cpt"/><span class="highlight"></span><span class="bar"></span>
+          <label>Chest Pain Type</label>
+        </div>
+      </div>
+      <div class="df">
+        <div class="group">
+          <input type="text" required name="rbp" id="rbp"/><span class="highlight"></span><span class="bar"></span>
+          <label>Resting Blood Pressure</label>
+        </div>
+        <div class="group">
+          <input type="text" required="required" name="chl" id="chl"/><span class="highlight"></span><span class="bar"></span>
+          <label>Cholesterol</label>
+        </div>
+      </div>
+      <div class="df">
+        <div class="group">
+          <input type="text" required name="mhr" id="mhr"/><span class="highlight"></span><span class="bar"></span>
+          <label>Max Heart rate</label>
+        </div>
+        <div class="group">
+          <input type="text" required name="eia" id="eia"/><span class="highlight"></span><span class="bar"></span>
+          <label>Exercise Induced Angina</label>
+        </div>
+      </div>
+      <div class="df">
+        <div class="group">
+          <input type="text" required="required" name="opk" id="opk"/><span class="highlight"></span><span class="bar"></span>
+          <label>Old Peak</label>
+        </div>
+        <div class="group">
+          <input type="text" required="required" name="slp" id="slp"/><span class="highlight"></span><span class="bar"></span>
+          <label>ST Slope</label>
+        </div>
+      </div>
+      <div class="df">
+        <div class="group">
+          <input type="text" required="required" name="ca" id="ca"/><span class="highlight"></span><span class="bar"></span>
+          <label>No of coloured vessels</label>
+        </div>
+        <div class="group">
+          <input type="text" required="required" name="tha" id="tha"/><span class="highlight"></span><span class="bar"></span>
+          <label>Thalassemia</label>
+        </div>
+      </div>
+          <button class="btn btn-submit" type="submit">submit</button>
+          <button class="btn btn-cancel" type="button">cancel</button>
+          <input class="submit" type="submit" value="Submit" /> -->
+          <label for="person_age">Age:</label>
+          <input type="text" id="person_age" name="person_age"><br>
+
+          <label for="person_income">Annual Income:</label>
+          <input type="text" id="person_income" name="person_income"><br>
+
+          <label for="person_home_ownership">Home Ownership:</label>
+          <input type="text" id="person_home_ownership" name="person_home_ownership"><br>
+
+          <label for="person_emp_length">Employment Length (in years):</label>
+          <input type="text" id="person_emp_length" name="person_emp_length"><br>
+
+          <label for="loan_intent">Loan Intent:</label>
+          <input type="text" id="loan_intent" name="loan_intent"><br>
+
+          <label for="loan_grade">Loan Grade:</label>
+          <input type="text" id="loan_grade" name="loan_grade"><br>
+
+          <label for="loan_amnt">Loan Amount:</label>
+          <input type="text" id="loan_amnt" name="loan_amnt"><br>
+
+          <label for="loan_int_rate">Input 8:</label>
+          <input type="text" id="loan_int_rate" name="loan_int_rate"><br>
+
+          <label for="loan_percent_income">Input 9:</label>
+          <input type="text" id="loan_percent_income" name="loan_percent_income"><br>
+
+          <label for="cb_person_default_on_file">Input 10:</label>
+          <input type="text" id="cb_person_default_on_file" name="cb_person_default_on_file"><br>
+
+          <label for="cb_preson_cred_hist_length">Input 11:</label>
+          <input type="text" id="cb_preson_cred_hist_length" name="cb_preson_cred_hist_length"><br>
+
+          <input type="submit" value="Submit">
+        </form>
+        <div class="side">
+
+          <video src="https://media.giphy.com/media/3ornk8qaF9ytl9zmY8/giphy.mp4"></video>
+        </div>
+      </div>
+
+
+    </div>
+</body>
+
+</html>
