@@ -1,100 +1,113 @@
-<!DOCTYPE html>
+
+
+ <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../static/css/style.css" />
-  <title>Loan Approval Prediction</title>
-</head>
-
-<body>
-
-  <h1 class="bo">Loan Approval Prediction</h1>
-  <div class="Image">
-    <img src="https://media.istockphoto.com/vectors/anatomical-heart-isolated-heart-diagnostic-center-sign-human-heart-vector-id1177145926?k=20&m=1177145926&s=612x612&w=0&h=30PszSkc9jmobfif-KVcCaauGUDAWlGspthpmtMsI54=">
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <title>Loan prediction</title>
+  </head>
+  <body>
+    
+    <h1  class="bo">Loan Prediction</h1>    
+    <div class="Image">
+      <img src="./logo.png">
+    </div>
   <div class="form-data">
     <div class="wrapper">
       <div class="head">
-        <form action="{{url_for('predict')}}" method="post">
-          <div class="prediction">{{ prediction_text }}</div>
-          <div class="btn-box"><a class="btn btn-link" href="{{url_for('index2')}}" target="_blank">Know More</a></div>
-          <hr class="sep"/>
-          </div>
-          <div class="df">
-            <div class="group">
-              <input type="text" required name="person_age" id="person_age"/><span class="highlight"></span><span class="bar"></span>
-              <label>Age</label>
-            </div>
-            <div class="group">
-              <input type="text" required name="person_income" id="person_income"/><span class="highlight"></span><span class="bar"></span>
-              <label>Annual Income</label>
-            </div>
-          </div>
-          <div class="df">
-            <div class="group">
-              <input type="text" required name="person_home_ownership" id="person_home_ownership"/><span class="highlight"></span><span class="bar"></span>
-              <div class="dropdown">
-                <button class="dropdown-btn">Select an option</button>
-                <div class="dropdown-content">
-                  <a href="#">RENT</a>
-                  <a href="#">OWN</a>
-                  <a href="#">MORTGAGE</a>
-                </div>
-              </div>
-              <label>Home Ownership</label>
-            </div>
-            <div class="group">
-              <input type="text" required name="person_emp_length" id="person_emp_length"/><span class="highlight"></span><span class="bar"></span>
-              <label>Employment Length (in years)</label>
-            </div>
-          </div>
-          <div class="df">
-            <div class="group">
-              <input type="text" required name="loan_intent" id="loan_intent"/><span class="highlight"></span><span class="bar"></span>
-              <label>Loan Intent</label>
-            </div>
-            <div class="group">
-              <input type="text" required name="loan_grade" id="loan_grade"/><span class="highlight"></span><span class="bar"></span>
-              <label>Loan Grade</label>
-            </div>
-          </div>
-          <div class="df">
-            <div class="group">
-              <input type="text" required name="loan_amnt" id="loan_amnt"/><span class="highlight"></span><span class="bar"></span>
-              <label>Loan Amount</label>
-            </div>
-            <div class="group">
-              <input type="text" required name="loan_int_rate" id="loan_int_rate"/><span class="highlight"></span><span class="bar"></span>
-              <label>Interest Rate</label>
-            </div>
-          </div>
-          <div class="df">
-            <div class="group">
-              <input type="text" required name="loan_percent_income" id="loan_percent_income"/><span class="highlight"></span><span class="bar"></span>
-              <label>Percent Income</label>
-            </div>
-            <div class="group">
-              <input type="text" required name="cb_person_default_on_file" id="cb_person_default_on_file"/><span class="highlight"></span><span class="bar"></span>
-              <label>Historical Default</label>
-            </div>
-          </div>
-          <div class="df">
-            <div class="group">
-              <input type="text" required name="cb_preson_cred_hist_length" id="cb_preson_cred_hist_length"/><span class="highlight"></span><span class="bar"></span>
-              <label>Credit History Length</label>
-            </div>
-          </div>
+      <form action="{{url_for('predict')}}" method="post">
+      <div><h2 class="status">Loan Status</h2></div>
+       
+       <div class="prediction">{{ prediction_text }}</div>
+        <div class="btn-box"><a class="btn btn-link" href="{{url_for('index2')}}" target="_blank">Know More</a></div>
+        <hr class="sep"/>
+      </div>
+        <div class="df">
+        <div class="group">
+          <input type="text" required="required" name="age" id="age"/><span class="highlight"></span><span class="bar"></span>
+          <label>age</label>
         </div>
-        <input class="btn btn-submit" type="submit">submit</button>
-        <input class="btn btn-cancel" type="button">cancel</button>
-        <div class="side">
-          <video src="https://media.giphy.com/media/3ornk8qaF9ytl9zmY8/giphy.mp4"></video>
+        <div class="group">
+          <input type="text" required name="person_income" id="person_income"/><span class="highlight"></span><span class="bar"></span>
+          <label>Annual Income</label>
         </div>
-    </div>
-  </div>
-</body>
+      </div>
 
+
+
+      
+      <div class="df">
+        <div class="group">
+          <input type="text" required name="person_home_ownership" id="person_home_ownership"/><span class="highlight"></span><span class="bar"></span>
+          <label>Home Ownership</label>
+        </div>
+        <div class="group">
+          <input type="text" required name="person_emp_length" id="person_emp_length"/><span class="highlight"></span><span class="bar"></span>
+          <label>Employment Length (in years)</label>
+        </div>
+      </div>
+
+
+
+      <div class="df">
+        <div class="group">
+          <input type="text" required name="loan_intent" id="loan_intent"/><span class="highlight"></span><span class="bar"></span>
+          <label>Loan Intent</label>
+        </div>
+        <div class="group">
+          <input type="text" required name="loan_grade" id="loan_grade"/><span class="highlight"></span><span class="bar"></span>
+          <label>Loan Grade</label>
+        </div>
+      </div>
+
+
+
+      <div class="df">
+        <div class="group">
+          <input type="text" required name="loan_amnt" id="loan_amnt"/><span class="highlight"></span><span class="bar"></span>
+          <label>Loan Amount</label>
+        </div>
+        <div class="group">
+          <input type="text" required name="loan_int_rate" id="loan_int_rate"/><span class="highlight"></span><span class="bar"></span>
+          <label>Interest Rate</label>
+        </div>
+      </div>
+
+
+      <div class="df">
+        <div class="group">
+          <input type="text" required name="loan_percent_income" id="loan_percent_income"/><span class="highlight"></span><span class="bar"></span>
+          <label>Percent Income</label>
+        </div>
+        <div class="group">
+          <input type="text" required name="cb_person_default_on_file" id="cb_person_default_on_file"/><span class="highlight"></span><span class="bar"></span>
+          <label>Historical Default</label>
+        </div>
+      </div>
+
+      <div class="df">
+      <div class="group">
+        <input type="text" required name="cb_preson_cred_hist_length" id="cb_preson_cred_hist_length"/><span class="highlight"></span><span class="bar"></span>
+        <label>Credit History Length</label>
+      </div>
+      </div>
+
+          <!--<button class="btn btn-submit" type="submit">submit</button>
+          <button class="btn btn-cancel" type="button">cancel</button>-->
+          <input class="submit" type="submit" value="Submit" />
+          
+      </form>
+      <div class="side">
+        
+      <video src="https://media.giphy.com/media/3ornk8qaF9ytl9zmY8/giphy.mp4"></video>
+      </div>
+    </div>
+
+
+  </div>
+  </body>
 </html>
+
