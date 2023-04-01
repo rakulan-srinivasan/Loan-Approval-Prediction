@@ -7,61 +7,64 @@ import requests
 import json
 from datetime import date, datetime
 
-
-
 app = Flask(__name__)
 
-model = pickle.load(open('RandomForest.pkl', 'rb'))
+model = pickle.load(open('xgb_pkl.pkl', 'rb'))
+
 @app.route('/index2',methods=['GET','POST'])
 def index2():
     return render_template('index2.html')
-def index():
-    return render_template('index.html')
-
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-
 @app.route('/predict', methods=['POST'])
 def predict():
-
-    # age = request.form['age']
-    # cpt=request.form['cpt']
-    # rbp=request.form['rbp']
-    # chl=request.form['chl']
-    # mhr=request.form['mhr']
-    # eia=request.form['eia']
-    # opk=request.form['opk']
-    # slp=request.form['slp']
-    # ca=request.form['ca']
-    # tha=request.form['tha']
-
+    print("came in")
     age = float(request.form['age'])
-    cpt = float(request.form['cpt'])
-    rbp = float(request.form['rbp'])
-    chl = float(request.form['chl'])
-    mhr = float(request.form['mhr'])
-    eia = float(request.form['eia'])
-    opk = float(request.form['opk'])
-    slp = float(request.form['slp'])
-    ca = float(request.form['ca'])
-    tha = float(request.form['tha'])
-       
-    
+    print("age")
+    person_home_ownership = float(request.form['person_home_ownership'])
+    print(person_home_ownership)
+    person_income = float(request.form['person_income'])
+    print(person_income)
+    person_emp_length = float(request.form['person_emp_length'])
+    print("Emp len")
+    print(person_emp_length)
+    loan_intent = float(request.form['loan_intent'])
+    print(loan_intent)
+    loan_grade = float(request.form['loan_grade'])
+    print(loan_grade)
+    loan_amnt = float(request.form['loan_amnt'])
+    print(loan_amnt)
+    loan_int_rate = float(request.form['loan_int_rate'])
+    print(loan_int_rate)
+    loan_percent_income = float(request.form['loan_percent_income'])
+    print("Loan percent")
+    print(loan_percent_income)
+    cb_person_default_on_file = float(request.form['cb_person_default_on_file'])
+    print("cb_default")
+    print(cb_person_default_on_file)
+    cb_person_cred_hist_length = float(request.form['cb_preson_cred_hist_length'])
+    print(cb_person_cred_hist_length)
+
+    data = np.array([
+        [age, person_home_ownership, person_income, person_emp_length, 
+         loan_intent, loan_grade, loan_amnt, loan_int_rate, 
+         loan_percent_income, cb_person_default_on_file, cb_person_cred_hist_length]
+    ])
+    print(data)
+
     output = "No output"
 
-    data = np.array([[age,cpt,rbp,chl,mhr,eia,opk,slp,ca,tha]])
-    print("entered")
-    pr=np.array([[68.0,	4.0,	144.0	,193.000000,	141.0,	0.0	,3.4,	2.000000,	2.000000,	7.000000]])
     prediction = model.predict(data)
     if(prediction==0):
-        output= "No heart disease diagnosed!!"
+        output= "Congrats! You are eligible for the loan!!"
     else:
-        output="Sorry! We regret to inform that you have been diagnosed with heart disease! "
+        output="Sorry! You are ineligible for the loan!"
+  
 
     return render_template('index.html', prediction_text=output)
 
-if __name__ == "__main__":
-    app.run()
+if __name__ == '__main__':
+    app.run(debug=True, port=8001)
