@@ -11,9 +11,6 @@ app = Flask(__name__)
 
 model = pickle.load(open('xgb_pkl.pkl', 'rb'))
 
-@app.route('/index2',methods=['GET','POST'])
-def index2():
-    return render_template('index2.html')
 
 @app.route('/')
 def index():
@@ -24,15 +21,36 @@ def predict():
     print("came in")
     age = float(request.form['age'])
     print("age")
-    person_home_ownership = float(request.form['person_home_ownership'])
+    person_home_ownership = request.form['person_home_ownership']
     print(person_home_ownership)
+    if person_home_ownership=='Rent':
+        person_home_ownership=3
+    elif person_home_ownership=='Own':
+        person_home_ownership=2
+    elif person_home_ownership=='mortgage':
+        person_home_ownership=0
+    else:
+        person_home_ownership=1
     person_income = float(request.form['person_income'])
     print(person_income)
     person_emp_length = float(request.form['person_emp_length'])
     print("Emp len")
     print(person_emp_length)
-    loan_intent = float(request.form['loan_intent'])
+    loan_intent = request.form['loan_intent']
     print(loan_intent)
+    if loan_intent=='PERSONAL':
+        loan_intent=4
+    elif loan_intent=='EDUCATION':
+        loan_intent=1
+    elif loan_intent=='MEDICAL':
+        loan_intent=3
+    elif loan_intent=='VENTURE':
+        loan_intent=2
+    elif loan_intent=='HOMEIMPROVEMENT':
+        loan_intent=5
+    else:
+        loan_intent=0
+
     loan_grade = float(request.form['loan_grade'])
     print(loan_grade)
     loan_amnt = float(request.form['loan_amnt'])
@@ -63,7 +81,7 @@ def predict():
     else:
         output="Sorry! You are ineligible for the loan!"
   
-
+    print(output)
     return render_template('index.html', prediction_text=output)
 
 if __name__ == '__main__':
