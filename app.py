@@ -9,7 +9,7 @@ from datetime import date, datetime
 
 app = Flask(__name__)
 
-model = pickle.load(open('xgb_pkl.pkl', 'rb'))
+model = pickle.load(open('xgb_pkl.pickle', 'rb'))
 
 
 @app.route('/')

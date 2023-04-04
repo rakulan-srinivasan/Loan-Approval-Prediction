@@ -1,88 +1,127 @@
-
 body {
-    background-image: url(https://poonawallafincorp.com/pfca/assets/blog_banner/blog_banner-pl-technology-desktop.jpg);
-    background-size: cover;
-  }
-  
-  .Image
-  {
-      opacity:0.5;
-      width:250px;
-      height:100px;
-  }
-  form {
-    margin: auto;
-    width: 60%;
-    background-color: #ffffff;
-    padding: 10px;
-    border-radius: 10px;
-  }
-  
-  input[type="number"], select {
-    padding: 8px 8px;
-    margin: 8px 8px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    width: 100%;
-  }
-  
-  input[type="submit"] {
-    background-color: #084a91;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  input[type="submit"]:hover {
-    background-color: #3497d4;
-  }
-  
-  .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
-  .column {
-    float: left;
-    width: 50%;
-    padding: 10px;
-  }
-  
-  @media screen and (max-width: 600px) {
-    .column {
-      width: 100%;
-    }
-  }
-  .status
-{
+  /* background-image: url(https://poonawallafincorp.com/pfca/assets/blog_banner/blog_banner-pl-technology-desktop.jpg);
+    background-size: cover; */
+
+}
+
+form {
+  display: flex;
+  margin: auto;
+  width: max-content;
+  padding: 10px;
+  border: 2px;
+  border: #084a91;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+}
+
+table{
+  width:500px;
+}
+
+label {
+  width:max-content;
+  padding: 5px;
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  float:inline-end;
+}
+
+input[type="text"], select {
+  width: 90%;
+  float: left;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input[type="submit"] {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  justify-content: center;
+  float: center;
+  display: flex;
+  background-color: #084a91;
+  color: white;
+  width: 50%;
+  padding: auto;
+  margin: auto;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 10px;
+  margin: auto;
+}
+
+input[type="submit"]:hover {
+  background-color: #3497d4;
+}
+
+.status {
   color: white;
   text-align: center;
   margin-bottom: 20px;
   margin-top: 10px;
 }
-.prediction{
-    color: rgb(117, 212, 238);
-    font-size: 24px;
-    margin: 5px;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 400;
-}
-.prediction:before{
 
-    color: #280878;
-    margin: 5px;
-    font-size: 35px;
-    font-weight: 600;
-    text-align: center;
-    
+.prediction {
+  color: rgb(117, 212, 238);
+  font-size: 24px;
+  margin: 5px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 400;
+}
+
+.prediction:before {
+
+  color: #280878;
+  margin: 5px;
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  width: 100%;
+  position: relative;
+  display: flex;
+  float:right;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: auto;
+}
+input[type="range"]{
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: block;
+  width: 80%;
+  height: 8px;
+  background-color: #d5d5d5;
+  border-radius: 8px;
+  outline: none;
+}
+#slider-value{
+  width: 15%;
+  position: relative;
+  background-color: #3264fe;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Roboto Mono",monospace;
+  padding: 10px;
+  margin: auto;
+  border-radius: 5px;
 }
