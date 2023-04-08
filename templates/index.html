@@ -6,28 +6,40 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../static/css/style_index.css" />
-  <script src="script.js"></script>
+  <script type="text/javascript" src="../templates/script.js"></script>
   <title>Loan prediction</title>
 </head>
 
 <body>
   <h1 style="background-color: #3497d4; text-align:center; color: white; padding: 10px;">The Prockki Code Loan
     Prediction
-  </h1>
+  </h1><br>
   <form action="{{url_for('predict')}}" method="post">
     <table>
+      <tr><td><div class="prediction">{{ prediction_text }}</div></td></tr>
       <tr>
         <td><center><label>INPUT</label></center></td>
       </tr>
       <tr>
-        <td><label for="age">Age:</label></td>
+        <td><div class="tooltip"><label for="age">Age:</label>
+          <span class="tooltiptext">Drag the Slider to set the value</span>
+        </div></td>
       </tr>
       <tr>
         <!-- <td><input type="text" id="age" name="age"></td> -->
-        <td><div class="container">
-          <input type="range" id="my-slider" min="20" max="144" value="25" oninput="slider()">
-          <div id="slider-value">1</div>
+        <td><div class="rangeslider">
+          <input type="range" id="age" min="20" max="144" value="25" oninput="slider(this)">
+          <div id="age-value">1</div>
       </div></td>
+      <script>
+        var rangeslider = document.getElementById("age");
+        var output = document.getElementById("age-value");
+        output.innerHTML = rangeslider.value;
+          
+        rangeslider.oninput = function() {
+          output.innerHTML = this.value;
+        }
+        </script>
       </tr>
       <tr>
         <td><label for="person_home_ownership">Person's Home Ownership:</label></td>
