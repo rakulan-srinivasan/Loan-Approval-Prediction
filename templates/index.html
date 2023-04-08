@@ -14,22 +14,20 @@
   <h1 style="background-color: #3497d4; text-align:center; color: white; padding: 10px;">The Prockki Code Loan
     Prediction
   </h1><br>
+  <div class="prediction">{{ prediction_text }}</div>
   <form action="{{url_for('predict')}}" method="post">
     <table>
-      <tr><td><div class="prediction">{{ prediction_text }}</div></td></tr>
       <tr>
         <td><center><label>INPUT</label></center></td>
       </tr>
       <tr>
-        <td><div class="tooltip"><label for="age">Age:</label>
-          <span class="tooltiptext">Drag the Slider to set the value</span>
-        </div></td>
+        <td><label for="age">Age:</label></td>
       </tr>
       <tr>
         <!-- <td><input type="text" id="age" name="age"></td> -->
         <td><div class="rangeslider">
-          <input type="range" id="age" min="20" max="144" value="25" oninput="slider(this)">
-          <div id="age-value">1</div>
+          <input type="range" name = "age" id="age" min="20" max="144" value="25" oninput="slider(this)">
+          <div id="age-value"></div>
       </div></td>
       <script>
         var rangeslider = document.getElementById("age");
