@@ -27,10 +27,9 @@ def predict():
     if person_home_ownership == 'rent':
         person_home_ownership = 3
     elif person_home_ownership == 'own':
-        person_home_ownership=2
-    elif person_home_ownership=='mortgage':
-        person_home_ownership=0
-    print(person_home_ownership, 'person_hme_ownershp')
+        person_home_ownership = 2
+    elif person_home_ownership == 'mortgage':
+        person_home_ownership = 0
     pred_input[2] = float(person_home_ownership)
 
     pred_input[3] = float(request.form.get('person_emp_length'))
@@ -78,13 +77,9 @@ def predict():
 
     pred_input[10] = float(request.form.get('cb_person_cred_hist_length'))
 
-    print(pred_input)
-    data = np.array(pred_input)
-    data1 = np.array([[22.0, 59000.0, 3.0, 123.0, 4.0, 3.0, 35000.0, 16.02, 0.59, 1.0, 3.0]])
+    data = np.array([pred_input])
 
-    prediction = model.predict(data1)
-    print(prediction, type(prediction), prediction[0])
-    print(model)
+    prediction = model.predict(data)
 
     if(prediction[0] == 1):
         output = "Congrats! You are eligible for the loan!!"
