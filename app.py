@@ -9,7 +9,7 @@ from datetime import date, datetime
 
 app = Flask(__name__)
 
-model = pickle.load(open('xgb_pkl.pickle', 'rb'))
+model = pickle.load(open('xgb_pkl.pkl', 'rb'))
 
 
 @app.route('/')
@@ -66,10 +66,11 @@ def predict():
     print(loan_amnt)
     loan_int_rate = float(request.form.get('loan_int_rate'))
     print(loan_int_rate)
-    loan_percent_income = float(request.form.get('loan_percent_income'))
-    print("Loan percent")
+    loan_percent_income = float(request.form.get('loan-percent-income'))
     print(loan_percent_income)
     cb_person_default_on_file = request.form.get('cb_person_default_on_file')
+    
+    print(request.form.get('option-1'), request.form.get('option-2'))
     if cb_person_default_on_file == 'N':
         cb_person_default_on_file = 0
     elif cb_person_default_on_file == 'Y':
@@ -98,3 +99,4 @@ def predict():
 
 if __name__ == '__main__':
     app.run(debug=True, port=8001)
+
