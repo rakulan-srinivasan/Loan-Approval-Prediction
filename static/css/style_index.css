@@ -93,7 +93,7 @@ input[type="submit"]:hover {
   box-sizing: border-box;
 }
 
-.rangeslider{
+.ageslider{
   width: 100%;
   position: relative;
   display: flex;
@@ -114,7 +114,29 @@ input[type="range"]{
   border-radius: 8px;
   outline: none;
 }
+.lpislider{
+  width: 100%;
+  position: relative;
+  display: flex;
+  float:right;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: auto;
+}
 #age-value{
+  width: 15%;
+  position: relative;
+  background-color: #3264fe;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Roboto Mono",monospace;
+  padding: 10px;
+  margin: auto;
+  border-radius: 5px;
+}
+
+#loan-percent-income-value{
   width: 15%;
   position: relative;
   background-color: #3264fe;
