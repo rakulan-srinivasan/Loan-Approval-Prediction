@@ -1,0 +1,250 @@
+body {
+  /* background-image: url(https://poonawallafincorp.com/pfca/assets/blog_banner/blog_banner-pl-technology-desktop.jpg);
+    background-size: cover; */
+
+}
+
+form {
+  display: flex;
+  margin: auto;
+  width: max-content;
+  padding: 10px;
+  border: 2px;
+  border: #0069d9;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+}
+
+table{
+  width:500px;
+}
+
+label {
+  width:max-content;
+  padding: 5px;
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  float:inline-end;
+}
+
+input[type="text"], select {
+  width: 90%;
+  float: left;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input[type="submit"] {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  justify-content: center;
+  float: center;
+  display: flex;
+  background-color: #0069d9;
+  color: white;
+  width: 50%;
+  padding: auto;
+  margin: 10px;
+  border: 0px;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 10px;
+  margin: auto;
+}
+
+input[type="submit"]:hover {
+  background-color: #0069d9;
+}
+
+.status {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.prediction {
+  color: rgb(117, 212, 238);
+  font-size: 24px;
+  margin: 5px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 400;
+}
+
+.prediction:before {
+
+  color: #0069d9;
+  margin: 5px;
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.ageslider{
+  width: 100%;
+  position: relative;
+  display: flex;
+  float:right;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: auto;
+}
+input[type="range"]{
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: block;
+  width: 80%;
+  height: 8px;
+  background-color: #d5d5d5;
+  border-radius: 8px;
+  outline: none;
+}
+.lpislider{
+  width: 100%;
+  position: relative;
+  display: flex;
+  float:right;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: auto;
+}
+#age-value{
+  width: 15%;
+  position: relative;
+  background-color: #0069d9;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Roboto Mono",monospace;
+  padding: 10px;
+  margin: auto;
+  border-radius: 5px;
+}
+
+#loan_percent_income_value{
+  width: 15%;
+  position: relative;
+  background-color: #0069d9;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Roboto Mono",monospace;
+  padding: 10px;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+  
+  
+  /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* @import url('https://fonts.googleapis.com/css?family=Lato:400,500,600,700&display=swap'); */
+
+.wrapper{
+  font-family: "Roboto Mono",monospace;
+  display: inline-flex;
+  height: 65px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  padding: auto;
+}
+.wrapper .option{
+  background: #fff;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0px 50px 0px 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: auto;
+  transition: all 0.3s ease;
+  
+}
+.wrapper .option .dot{
+  height: 15px;
+  width: 15px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  position: relative;
+}
+.wrapper .option .dot::before{
+  position: absolute;
+  content: "";
+  top: 3px;
+  left: 3px;
+  width: 9px;
+  height: 9px;
+  background: #0069d9;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(1.5);
+  transition: all 0.3s ease;
+}
+input[type="radio"]{
+  display: none;
+}
+#option-1:checked:checked ~ .option-1,
+#option-2:checked:checked ~ .option-2{
+  border-color: #0069d9;
+  background: #0069d9;
+}
+#option-1:checked:checked ~ .option-1 .dot,
+#option-2:checked:checked ~ .option-2 .dot{
+  background: #fff;
+}
+#option-1:checked:checked ~ .option-1 .dot::before,
+#option-2:checked:checked ~ .option-2 .dot::before{
+  opacity: 1;
+  transform: scale(1);
+}
+.wrapper .option span{
+  font-size: 17px;
+  font-family: "Roboto Mono",monospace;
+  color: #808080;
+}
+#option-1:checked:checked ~ .option-1 span,
+#option-2:checked:checked ~ .option-2 span{
+  color: #fff;
+}
