@@ -10,7 +10,7 @@ form {
   width: max-content;
   padding: 10px;
   border: 2px;
-  border: #084a91;
+  border: #0069d9;
   border-style: solid;
   border-width: 2px;
   border-radius: 10px;
@@ -44,11 +44,12 @@ input[type="submit"] {
   justify-content: center;
   float: center;
   display: flex;
-  background-color: #084a91;
+  background-color: #0069d9;
   color: white;
   width: 50%;
   padding: auto;
-  margin: auto;
+  margin: 10px;
+  border: 0px;
   border-radius: 4px;
   cursor: pointer;
   padding: 10px;
@@ -56,7 +57,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #3497d4;
+  background-color: #0069d9;
 }
 
 .status {
@@ -79,7 +80,7 @@ input[type="submit"]:hover {
 
 .prediction:before {
 
-  color: #280878;
+  color: #0069d9;
   margin: 5px;
   font-size: 35px;
   font-weight: 600;
@@ -127,7 +128,7 @@ input[type="range"]{
 #age-value{
   width: 15%;
   position: relative;
-  background-color: #3264fe;
+  background-color: #0069d9;
   color: #ffffff;
   text-align: center;
   font-family: "Roboto Mono",monospace;
@@ -139,7 +140,7 @@ input[type="range"]{
 #loan-percent-income-value{
   width: 15%;
   position: relative;
-  background-color: #3264fe;
+  background-color: #0069d9;
   color: #ffffff;
   text-align: center;
   font-family: "Roboto Mono",monospace;
@@ -173,4 +174,77 @@ input[type="range"]{
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+/* @import url('https://fonts.googleapis.com/css?family=Lato:400,500,600,700&display=swap'); */
+
+.wrapper{
+  font-family: "Roboto Mono",monospace;
+  display: inline-flex;
+  height: 65px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  padding: auto;
+}
+.wrapper .option{
+  background: #fff;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0px 50px 0px 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: auto;
+  transition: all 0.3s ease;
+  
+}
+.wrapper .option .dot{
+  height: 15px;
+  width: 15px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  position: relative;
+}
+.wrapper .option .dot::before{
+  position: absolute;
+  content: "";
+  top: 3px;
+  left: 3px;
+  width: 9px;
+  height: 9px;
+  background: #0069d9;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(1.5);
+  transition: all 0.3s ease;
+}
+input[type="radio"]{
+  display: none;
+}
+#option-1:checked:checked ~ .option-1,
+#option-2:checked:checked ~ .option-2{
+  border-color: #0069d9;
+  background: #0069d9;
+}
+#option-1:checked:checked ~ .option-1 .dot,
+#option-2:checked:checked ~ .option-2 .dot{
+  background: #fff;
+}
+#option-1:checked:checked ~ .option-1 .dot::before,
+#option-2:checked:checked ~ .option-2 .dot::before{
+  opacity: 1;
+  transform: scale(1);
+}
+.wrapper .option span{
+  font-size: 17px;
+  font-family: "Roboto Mono",monospace;
+  color: #808080;
+}
+#option-1:checked:checked ~ .option-1 span,
+#option-2:checked:checked ~ .option-2 span{
+  color: #fff;
 }
